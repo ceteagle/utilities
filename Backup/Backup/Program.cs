@@ -11,18 +11,15 @@ namespace Backup
     {
         static void Main(string[] args)
         {
-
+            string sourceBaseDirectory = @"";
+            string targetBaseDirectory = @"";
            
 
             if (!Directory.Exists(targetBaseDirectory))
                 Directory.CreateDirectory(targetBaseDirectory);
 
             BackupTool bt = new BackupTool();
-            Console.WriteLine("=== BACKING UP PICTURES ===");
-            bt.RecursiveCopy(sourceBaseDirectory, targetBaseDirectory);
-
-            Console.WriteLine("\n=== BACKING UP VIDEOS ===");
-            
+            Console.WriteLine("=== COPYING FILES ===");
             bt.RecursiveCopy(sourceBaseDirectory, targetBaseDirectory);
 
             bt.Report();
